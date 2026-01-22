@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: statefulset-lab
+spec:
+  type: clusterIP
+  clusterIP: headless None
+  selector:
+    app: mysql
+    tier: database
+    
+  ports:
+  - port: 3306
+    name: web
